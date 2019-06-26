@@ -1,0 +1,323 @@
+PS E:\Á·Ï°Demo\test> docker build -t web_test ./webapplication1
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder921326444/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test> docker build -t web_test ./webapplication1/
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder300458971/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test> ls
+
+
+    Ä¿Â¼: E:\Á·Ï°Demo\test
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        2018/7/27      9:40                ConsoleApp1
+d-----        2018/7/27     10:44                EFGetStarted.AspNetCore.ExistingDb
+d-----        2019/3/11     11:09                TestList
+d-----        2019/6/26     10:19                WebApplication1
+d-----        2018/7/27      9:39                WebApplication2
+-a----        2019/6/26     10:19             82 .dockerignore
+-a----        2019/3/11     11:02           2178 test.sln
+
+
+PS E:\Á·Ï°Demo\test>
+PS E:\Á·Ï°Demo\test> docker build -t web_test .\WebApplication1\
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder979793790/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test> docker build -rm -t web_test .\WebApplication1\
+unknown shorthand flag: 'r' in -rm
+See 'docker build --help'.
+PS E:\Á·Ï°Demo\test> docker build -r -t web_test .\WebApplication1\
+unknown shorthand flag: 'r' in -r
+See 'docker build --help'.
+PS E:\Á·Ï°Demo\test> docker build  -t web_test .
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: CreateFile E:\Á·Ï°Demo\test\Dockerfile: The system cannot find the file specified.
+PS E:\Á·Ï°Demo\test> docker build  -t web_test .\WebApplication1\
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder369633477/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test> docker build  -t web_test .\WebApplication1\
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder896154976/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test> ^C
+PS E:\Á·Ï°Demo\test> cd .\WebApplication1\
+PS E:\Á·Ï°Demo\test\WebApplication1> docker build  -t web_test .
+Sending build context to Docker daemon  3.585MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+COPY failed: stat /var/lib/docker/tmp/docker-builder003159359/WebApplication1/WebApplication1.csproj: no such file or directory
+PS E:\Á·Ï°Demo\test\WebApplication1> docker build  -t web_test .^C
+PS E:\Á·Ï°Demo\test\WebApplication1> cd ../
+PS E:\Á·Ï°Demo\test> docker build  -t web_test -f .\WebApplication1\Dockerfile .
+Sending build context to Docker daemon  7.362MB
+Step 1/16 : FROM microsoft/aspnetcore:2.0 AS base
+ ---> db030c19e94b
+Step 2/16 : WORKDIR /app
+ ---> Using cache
+ ---> 53f60ff48638
+Step 3/16 : EXPOSE 80
+ ---> Using cache
+ ---> 74f7e6fa9c25
+Step 4/16 : FROM microsoft/aspnetcore-build:2.0 AS build
+ ---> 06a6525397c2
+Step 5/16 : WORKDIR /src
+ ---> Using cache
+ ---> 385e8cbd9dbd
+Step 6/16 : COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
+ ---> 292aac908f5a
+Step 7/16 : RUN dotnet restore "WebApplication1/WebApplication1.csproj"
+ ---> Running in 2b7805aa1003
+  Restoring packages for /src/WebApplication1/WebApplication1.csproj...
+  Restoring packages for /src/WebApplication1/WebApplication1.csproj...
+  Restore completed in 526.32 ms for /src/WebApplication1/WebApplication1.csproj.
+  Installing Microsoft.Extensions.Configuration.Abstractions 2.1.1.
+  Installing System.Memory 4.5.1.
+  Installing System.Runtime.CompilerServices.Unsafe 4.5.1.
+  Installing Microsoft.AspNetCore.Razor.Language 2.0.2.
+  Installing Microsoft.CodeAnalysis.Razor 2.0.2.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.Contracts 2.0.3.
+  Installing Microsoft.Extensions.Configuration 2.1.1.
+  Installing Microsoft.Extensions.Primitives 2.1.1.
+  Installing Microsoft.AspNetCore.Mvc.Razor.Extensions 2.0.2.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.Utils 2.0.3.
+  Installing Microsoft.Extensions.Configuration.Binder 2.1.1.
+  Installing Microsoft.Extensions.Logging.Abstractions 2.1.1.
+  Installing Microsoft.Extensions.Options 2.1.1.
+  Installing Microsoft.Extensions.Caching.Abstractions 2.1.1.
+  Installing Microsoft.Extensions.DependencyInjection.Abstractions 2.1.1.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.Templating 2.0.3.
+  Installing Remotion.Linq 2.2.0.
+  Installing Microsoft.AspNetCore.All 2.0.8.
+  Installing Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.4.10.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.Design 2.0.3.
+  Installing Microsoft.EntityFrameworkCore.Tools 2.1.1.
+  Installing Microsoft.AspNetCore 2.0.3.
+  Installing Microsoft.AspNetCore.ApplicationInsights.HostingStartup 2.0.3.
+  Installing Microsoft.AspNetCore.AzureAppServicesIntegration 2.0.3.
+  Installing Microsoft.AspNetCore.Server.Kestrel 2.0.3.
+  Installing Microsoft.AspNetCore.AzureAppServices.HostingStartup 2.0.3.
+  Installing Microsoft.AspNetCore.Identity 2.0.3.
+  Installing Microsoft.AspNetCore.Identity.EntityFrameworkCore 2.0.3.
+  Installing Microsoft.Extensions.Identity.Stores 2.0.3.
+  Installing Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv 2.0.3.
+  Installing Microsoft.AspNetCore.Server.Kestrel.Https 2.0.3.
+  Installing Microsoft.AspNetCore.Server.Kestrel.Core 2.0.3.
+  Installing System.Collections.Immutable 1.5.0.
+  Installing Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions 2.0.3.
+  Installing Microsoft.Extensions.Identity.Core 2.0.3.
+  Installing Microsoft.VisualStudio.Web.CodeGenerators.Mvc 2.0.3.
+  Installing Microsoft.EntityFrameworkCore.Design 2.1.1.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration 2.0.3.
+  Installing Microsoft.CSharp 4.5.0.
+  Installing Microsoft.EntityFrameworkCore.Relational 2.1.1.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore 2.0.3.
+  Installing System.ComponentModel.Annotations 4.5.0.
+  Installing Microsoft.EntityFrameworkCore 2.1.1.
+  Installing Microsoft.VisualStudio.Web.CodeGeneration.Core 2.0.3.
+  Installing Microsoft.EntityFrameworkCore.Analyzers 2.1.1.
+  Installing Microsoft.Extensions.DependencyInjection 2.1.1.
+  Installing Microsoft.EntityFrameworkCore.Abstractions 2.1.1.
+  Installing System.Diagnostics.DiagnosticSource 4.5.0.
+  Installing Microsoft.Extensions.Caching.Memory 2.1.1.
+  Installing Microsoft.Extensions.Logging 2.1.1.
+  Generating MSBuild file /src/WebApplication1/obj/WebApplication1.csproj.nuget.g.props.
+  Generating MSBuild file /src/WebApplication1/obj/WebApplication1.csproj.nuget.g.targets.
+  Restore completed in 15.37 sec for /src/WebApplication1/WebApplication1.csproj.
+Removing intermediate container 2b7805aa1003
+ ---> 3294ad7cd6d9
+Step 8/16 : COPY . .
+ ---> 4a104b44a5bf
+Step 9/16 : WORKDIR "/src/WebApplication1"
+ ---> Running in 8bf725a024d8
+Removing intermediate container 8bf725a024d8
+ ---> a463219376c8
+Step 10/16 : RUN dotnet build "WebApplication1.csproj" -c Release -o /app
+ ---> Running in 1b24a24f9b00
+Microsoft (R) Build Engine version 15.7.179.6572 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 66.53 ms for /src/WebApplication1/WebApplication1.csproj.
+  Restore completed in 55 ms for /src/WebApplication1/WebApplication1.csproj.
+  WebApplication1 -> /app/WebApplication1.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:06.61
+Removing intermediate container 1b24a24f9b00
+ ---> 57b55b23b688
+Step 11/16 : FROM build AS publish
+ ---> 57b55b23b688
+Step 12/16 : RUN dotnet publish "WebApplication1.csproj" -c Release -o /app
+ ---> Running in 378edd3d3c1a
+Microsoft (R) Build Engine version 15.7.179.6572 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Restore completed in 129.03 ms for /src/WebApplication1/WebApplication1.csproj.
+  Restore completed in 69.16 ms for /src/WebApplication1/WebApplication1.csproj.
+  WebApplication1 -> /src/WebApplication1/bin/Release/netcoreapp2.0/WebApplication1.dll
+  WebApplication1 -> /app/
+Removing intermediate container 378edd3d3c1a
+ ---> c20e7165b7b5
+Step 13/16 : FROM base AS final
+ ---> 74f7e6fa9c25
+Step 14/16 : WORKDIR /app
+ ---> Running in 09dfd9b0f55a
+Removing intermediate container 09dfd9b0f55a
+ ---> 6c6ecbda2ee2
+Step 15/16 : COPY --from=publish /app .
+ ---> 53dfe8253bb7
+Step 16/16 : ENTRYPOINT ["dotnet", "WebApplication1.dll"]
+ ---> Running in d5f90c3d0446
+Removing intermediate container d5f90c3d0446
+ ---> 6f5a89bfae5a
+Successfully built 6f5a89bfae5a
+Successfully tagged web_test:latest
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+PS E:\Á·Ï°Demo\test> docker ps
+CONTAINER ID        IMAGE                 COMMAND               CREATED             STATUS              PORTS                   NAMES
+263581daee09        webapplication1:dev   "tail -f /dev/null"   36 minutes ago      Up 36 minutes       0.0.0.0:32768->80/tcp   dreamy_keller
+PS E:\Á·Ï°Demo\test> docker stop dreamy_keller
+dreamy_keller
+PS E:\Á·Ï°Demo\test> docker iamges
+docker: 'iamges' is not a docker command.
+See 'docker --help'
+PS E:\Á·Ï°Demo\test> docker images
+REPOSITORY                   TAG                 IMAGE ID            CREATED              SIZE
+web_test                     latest              6f5a89bfae5a        About a minute ago   357MB
+<none>                       <none>              c20e7165b7b5        About a minute ago   2.07GB
+<none>                       <none>              4cc43803235e        44 minutes ago       347MB
+webapplication1              dev                 07e16c3f8126        44 minutes ago       347MB
+ubuntu                       18.04               4c108a37151f        7 days ago           64.2MB
+microsoft/aspnetcore-build   2.0                 06a6525397c2        10 months ago        2.02GB
+microsoft/aspnetcore         2.0                 db030c19e94b        10 months ago        347MB
+PS E:\Á·Ï°Demo\test> docker run -d -p 8800:80 --name web1 web_test
+bae8201be28a2389eb63f85f97c8fd642a2c4082929552f8faabe8c881013215
+PS E:\Á·Ï°Demo\test> docker logs web1
+warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
+      No XML encryptor configured. Key {574e9029-0437-4381-bf27-67d6bf10c66e} may be persisted to storage in unencrypted form.
+Hosting environment: Production
+Content root path: /app
+Now listening on: http://[::]:80
+Application started. Press Ctrl+C to shut down.
+PS E:\Á·Ï°Demo\test> docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+bae8201be28a        web_test            "dotnet WebApplicati¡­"   14 seconds ago      Up 12 seconds       0.0.0.0:8800->80/tcp   web1
+PS E:\Á·Ï°Demo\test> docker run -d -p 8801:80 --name web2 web_test
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: Conflict. The container name "/web2" is already in use by container "e1d6518941db228586e791ac273f45395a0450a9587ec1a362507c719be133d8". You have to remove (or rename) that container to be able to reuse that name.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+PS E:\Á·Ï°Demo\test> docker run -d -p 8801:80 --name web2 web_test
+C:\Program Files\Docker\Docker\Resources\bin\docker.exe: Error response from daemon: Conflict. The container name "/web2" is already in use by container "e1d6518941db228586e791ac273f45395a0450a9587ec1a362507c719be133d8". You have to remove (or rename) that container to be able to reuse that name.
+See 'C:\Program Files\Docker\Docker\Resources\bin\docker.exe run --help'.
+PS E:\Á·Ï°Demo\test> docker s
+docker: 's' is not a docker command.
+See 'docker --help'
+PS E:\Á·Ï°Demo\test> docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+bae8201be28a        web_test            "dotnet WebApplicati¡­"   50 seconds ago      Up 48 seconds       0.0.0.0:8800->80/tcp   web1
+PS E:\Á·Ï°Demo\test> docker ps -a
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                            PORTS                  NAMES
+bae8201be28a        web_test              "dotnet WebApplicati¡­"   59 seconds ago      Up 58 seconds                     0.0.0.0:8800->80/tcp   web1
+e1d6518941db        webapplication1:dev   "bash"                   27 minutes ago      Exited (0) 27 minutes ago                                web2
+263581daee09        webapplication1:dev   "tail -f /dev/null"      39 minutes ago      Exited (137) About a minute ago                          dreamy_keller
+PS E:\Á·Ï°Demo\test> docker rm web2
+web2
+PS E:\Á·Ï°Demo\test> docker run -d -p 8801:80 --name web2 web_test
+9ef94d39ceea3c27bb435474ef78d4535a9b723b2d174599a1dec2cb4f2e8db1
+PS E:\Á·Ï°Demo\test> start http://127.0.0.1:8800
+PS E:\Á·Ï°Demo\test>
+PS E:\Á·Ï°Demo\test> docker run -d -p 8002:80 --name web3 web_test
+144ab0109770c6602ef8893e757728d49217adf4b1eaf5aa079f4131fdae2380
+PS E:\Á·Ï°Demo\test> stop  http://127.0.0.1:8800
+stop : ÎÞ·¨½«¡°stop¡±ÏîÊ¶±ðÎª cmdlet¡¢º¯Êý¡¢½Å±¾ÎÄ¼þ»ò¿ÉÔËÐÐ³ÌÐòµÄÃû³Æ¡£Çë¼ì²éÃû³ÆµÄÆ´Ð´£¬Èç¹û°üÀ¨Â·¾¶£¬ÇëÈ·±£Â·¾¶ÕýÈ·£¬È»ºóÔÙÊÔÒ»´Î¡£
+ËùÔÚÎ»ÖÃ ÐÐ:1 ×Ö·û: 1
++ stop  http://127.0.0.1:8800
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (stop:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS E:\Á·Ï°Demo\test> start  http://127.0.0.1:8800
+PS E:\Á·Ï°Demo\test> http://127.0.0.1:8801/
